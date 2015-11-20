@@ -4,7 +4,7 @@
  * @subpackage YOUR_THEME
  */
 ?>
-	<div id="sidebar">
+	<aside class="sidebar">
 
-	</div> <!-- sidebar -->
+	</aside> <!-- sidebar -->
 
