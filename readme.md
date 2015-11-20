@@ -1,5 +1,5 @@
 # Wordpress Project Boilerplate
-A balnk theme to be used for WordPress-powered projects.
+A blank theme to be used for WordPress-powered projects.
 
 ## Features
 * Bootstrap 3 Based
