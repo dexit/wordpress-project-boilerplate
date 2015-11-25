@@ -1,13 +1,4 @@
-<?php
-/**
- * @package WordPress
- * @subpackage YOUR_THEME
- *
- * Template Name: Links
- *
- */
-
-get_header(); ?>
+<?php get_header(); ?>
 
 <h2>Links:</h2>
 
@@ -15,5 +6,4 @@ get_header(); ?>
 	<?php wp_list_bookmarks(); ?>
 </ul>
 
-<?php 
-get_footer(); ?>
+<?php get_footer(); ?>

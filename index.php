@@ -1,12 +1,6 @@
-<?php
-/**
- * @package WordPress
- * @subpackage YOUR_THEME
- */
-
-get_header(); ?>
-
-	<?php 
+<?php get_header(); ?>
+<div class="container">
+		<?php 
 	if (have_posts()) : ?>
 
 		<?php 
@@ -39,9 +33,5 @@ get_header(); ?>
 
 	<?php 
 	endif; ?>
-
-<?php 
-get_sidebar(); ?>
-
-<?php 
-get_footer(); ?>
+</div>
+<?php get_footer(); ?>

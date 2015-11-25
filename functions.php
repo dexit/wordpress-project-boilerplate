@@ -1,5 +1,2 @@
 <?php
-/**
- * @package WordPress
- * @subpackage YOUR_THEME
- */
+// Theme functions go here...

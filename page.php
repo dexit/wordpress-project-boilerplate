@@ -1,11 +1,5 @@
-<?php
-/**
- * @package WordPress
- * @subpackage YOUR_THEME
- */
-
-get_header(); ?>
-
+<?php get_header(); ?>
+<div class="container">
 	<?php 
 	if (have_posts()) : while (have_posts()) : the_post(); ?>
 	
@@ -15,9 +9,5 @@ get_header(); ?>
 
 	<?php 
 	endwhile; endif; ?>
-
-<?php 
-get_sidebar(); ?>
-
-<?php 
-get_footer(); ?>
+</div>
+<?php get_footer(); ?>
