@@ -19,14 +19,21 @@ Add where necessary
 ```RewriteEngine On```
 
 ### Restrict to maintenance page on go live
-```RewriteCond %{REMOTE_ADDR} !82.69.78.184 [NC]
-RewriteRule !maintenance.php /maintenance.php? [R]```
+
+```
+# Replace the "###EXTERNAL IP ADDRESS HERE###" phrase with your external IP Address (Search google for "IP")
+RewriteCond %{REMOTE_ADDR} !###EXTERNAL IP ADDRESS HERE### [NC]
+RewriteRule !maintenance.php /maintenance.php? [R]
+```
 
 ### Redirect for news legacy installs to root installs
-```RewriteRule ^news/wp-content/uploads/(.*)$ wp-content/uploads/$1 [R=301,L]```
+```
+RewriteRule ^news/wp-content/uploads/(.*)$ wp-content/uploads/$1 [R=301,L]
+```
 
 ### mod deflate
-```<IfModule mod_deflate.c>
+```
+<IfModule mod_deflate.c>
     <IfModule mod_headers.c>
         Header append Vary User-Agent env=!dont-vary
     </IfModule>
@@ -35,11 +42,13 @@ RewriteRule !maintenance.php /maintenance.php? [R]```
         # DEFLATE by extension
         AddOutputFilter DEFLATE js css htm html xml
     </IfModule>
-</IfModule>```
+</IfModule>
+```
 
 ### Expiry caching
 
-```ExpiresActive On
+```
+ExpiresActive On
 ExpiresByType image/jpg "access 1 year"
 ExpiresByType image/jpeg "access 1 year"
 ExpiresByType image/gif "access 1 year"
@@ -50,5 +59,6 @@ ExpiresByType text/x-javascript "access 1 month"
 ExpiresByType application/javascript "access plus 1 year"
 ExpiresByType application/x-shockwave-flash "access 1 month"
 ExpiresByType image/x-icon "access 1 year"
-ExpiresDefault "access plus 1 month"```
+ExpiresDefault "access plus 1 month"
+```
 
