@@ -7,7 +7,9 @@ var html_dir = ['./*.html', './*.php', './**/*.html', './**/*.php'],
     './js/scripts.js'],
     js_output_dir = './public/js',
     css_dir = './public/css',
-    php_dir = ['./*.php', './**/*.php'];
+    php_dir = ['./*.php', './**/*.php'],
+    img_src_dir = ['./layout/*.+(png|jpg|gif|jpeg)'],
+    img_out_dir = './layout';
 
 /*Gulp Requires*/
 var gulp = require('gulp'),
@@ -19,34 +21,23 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     jshint = require('gulp-jshint'),
     cat = require('gulp-concat'),
-    cleancss = new LessPluginCleanCSS({ advanced: true, keepSpecialComments: 0 });
+    cleancss = new LessPluginCleanCSS({ advanced: true, keepSpecialComments: 0 }),
+    imageop = require('gulp-image-optimization');
 
 /*Watch Task*/
 gulp.task('watch', function() {
+    gulp.watch(html_dir, ['bootlint']);
+    gulp.watch(less_dir, ['less']);
+    gulp.watch(js_dir, ['js-build-dev', 'jshint']);
+});
 
-
-    gulp.watch(less_dir).on('change', function(file) {
-        return gulp.src(file.path)
-            .pipe(less({
-              paths: [ path.join(__dirname, 'less', 'includes') ],
-              plugins: [cleancss]
-            }))
-            .pipe(gulp.dest(css_dir));
-    });
-
-    gulp.watch(html_dir).on('change', function(file) {
-        return gulp.src(file.path)
-                .pipe(bootlint({disabledIds: ['E001', 'W001', 'W002', 'W003', 'W005']}));
-    });
-
-	gulp.watch(js_dir).on('change', function(file) {
-        return gulp.src(js_dir)
-	        .pipe(jshint())
-	        .pipe(jshint.reporter('jshint-stylish'))
-	        .pipe(uglify())
-	        .pipe(cat('scripts.min.js'))
-	        .pipe(gulp.dest(js_output_dir));
-	});
+/* Image Min */
+gulp.task('images', function(cb) {
+    gulp.src(img_src_dir).pipe(imageop({
+        optimizationLevel: 8,
+        progressive: true,
+        interlaced: true
+    })).pipe(gulp.dest(img_out_dir)).on('end', cb).on('error', cb);
 });
 
 /*Compile LESS*/
