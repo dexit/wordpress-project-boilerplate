@@ -1,0 +1,34 @@
+{
+  "name": "wordpress-project-boilerplate",
+  "description": "A blank custom Wordpress theme",
+  "main": "gulpfile.js",
+  "authors": [
+    "Rapid Web Ltd"
+  ],
+  "license": "UNLICENSED",
+  "keywords": [
+    "wordpress",
+    "less",
+    "bootstrap",
+    "responsive",
+    "gulp",
+    "theme",
+    "boilerplate"
+  ],
+  "homepage": "https://github.com/rapidwebltd/wordpress-project-boilerplate",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "fontawesome#~4.5.0"
+  }
+}

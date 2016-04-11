@@ -1,0 +1,42 @@
+{
+  "name": "wordpress-project-boilerplate",
+  "version": "1.0.0",
+  "description": "A blank custom Wordpress theme",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-bootlint": "^0.7.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-image-optimization": "^0.1.3",
+    "gulp-jshint": "^2.0.0",
+    "gulp-less": "^3.0.5",
+    "gulp-uglify": "^1.5.3",
+    "gulp-watch": "^4.3.5",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0",
+    "less-plugin-clean-css": "^1.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rapidwebltd/wordpress-project-boilerplate.git"
+  },
+  "keywords": [
+    "wordpress",
+    "less",
+    "bootstrap",
+    "responsive",
+    "gulp",
+    "theme",
+    "boilerplate"
+  ],
+  "author": "Rapid Web Ltd",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/rapidwebltd/wordpress-project-boilerplate/issues"
+  },
+  "homepage": "https://github.com/rapidwebltd/wordpress-project-boilerplate#readme"
+}
