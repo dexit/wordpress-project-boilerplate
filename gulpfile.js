@@ -22,10 +22,12 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     cat = require('gulp-concat'),
     cleancss = new LessPluginCleanCSS({ advanced: true, keepSpecialComments: 0 }),
-    imageop = require('gulp-image-optimization');
+    imageop = require('gulp-image-optimization'),
+    livereload = require('gulp-livereload');
 
 /*Watch Task*/
 gulp.task('watch', function() {
+    livereload.listen();
     gulp.watch(html_dir, ['bootlint']);
     gulp.watch(less_dir, ['less']);
     gulp.watch(js_dir, ['js-build-dev', 'jshint']);
@@ -42,12 +44,13 @@ gulp.task('images', function(cb) {
 
 /*Compile LESS*/
 gulp.task('less', function() {
-	return gulp.src(less_dir)
-            .pipe(less({
-              paths: [ path.join(__dirname, 'less', 'includes') ],
-              plugins: [cleancss]
-            }))
-            .pipe(gulp.dest(css_dir));
+    return gulp.src(less_dir)
+        .pipe(less({
+          paths: [ path.join(__dirname, 'less', 'includes') ],
+          plugins: [cleancss]
+        })).pipe(livereload())
+        .pipe(gulp.dest(css_dir))
+        ;
 });
 
 /*Compile JS*/
@@ -55,22 +58,25 @@ gulp.task('js-build', function() {
   return gulp.src(js_dir)
     .pipe(uglify())
     .pipe(cat('scripts.min.js'))
-    .pipe(gulp.dest(js_output_dir));
+    .pipe(gulp.dest(js_output_dir))
+    .pipe(livereload());
 });
 
 /*Compile JS UNMINIFIED!!*/
 gulp.task('js-build-dev', function() {
   return gulp.src(js_dir)
     .pipe(cat('scripts.min.js'))
-    .pipe(gulp.dest(js_output_dir));
+    .pipe(gulp.dest(js_output_dir))
+    .pipe(livereload());
 });
 
 /*Bootlint*/
 gulp.task('bootlint', function() {
-	return gulp.src(html_dir)
-                .pipe(bootlint({disabledIds: ['E001', 'W001', 'W002', 'W003', 'W005']}));
-	
+    return gulp.src(html_dir)
+        .pipe(bootlint({disabledIds: ['E001', 'W001', 'W002', 'W003', 'W005']}))
+        .pipe(livereload());
 });
+
 /*JS Lint*/
 gulp.task('jshint', function() {
   return gulp.src(js_dir)
