@@ -25,6 +25,13 @@ var gulp = require('gulp'),
     imageop = require('gulp-image-optimization'),
     livereload = require('gulp-livereload');
 
+/*Default Task*/
+gulp.task('default', ['less', 'js-build', 'images']);
+
+/*Run linters*/
+gulp.task('lint', ['bootlint', 'jshint']);
+
+
 /*Watch Task*/
 gulp.task('watch', function() {
     livereload.listen();
