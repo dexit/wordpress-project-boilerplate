@@ -5,7 +5,7 @@
   "authors": [
     "Rapid Web Ltd"
   ],
-  "license": "UNLICENSED",
+  "license": "MIT",
   "keywords": [
     "wordpress",
     "less",
@@ -19,7 +19,6 @@
   "moduleType": [
     "node"
   ],
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -28,7 +27,14 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.5",
-    "font-awesome": "fontawesome#~4.5.0"
+    "Yamm3": "yamm3#^1.1.0",
+    "animate.less": "*",
+    "basic-js-cookie-banner": "*",
+    "direct-share-buttons": "*",
+    "rapid-style": "*",
+    "wow": "^1.1.2"
+  },
+  "resolutions": {
+    "jquery": "1.9.1 - 2"
   }
 }
