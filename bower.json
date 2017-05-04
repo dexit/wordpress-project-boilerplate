@@ -1,24 +1,22 @@
 {
-  "name": "wordpress-project-boilerplate",
-  "description": "A blank custom Wordpress theme",
+  "name": "rapidweb-project-boilerplate",
+  "description": "Rapid Web's workflow for new projects.",
   "main": "gulpfile.js",
   "authors": [
     "Rapid Web Ltd"
   ],
   "license": "MIT",
   "keywords": [
-    "wordpress",
-    "less",
-    "bootstrap",
-    "responsive",
+    "project",
+    "workflow",
+    "php",
+    "html",
     "gulp",
-    "theme",
-    "boilerplate"
+    "js",
+    "css",
+    "less"
   ],
-  "homepage": "https://github.com/rapidwebltd/wordpress-project-boilerplate",
-  "moduleType": [
-    "node"
-  ],
+  "homepage": "https://github.com/rapidwebltd/rapidweb-project-boilerplate",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -31,10 +29,7 @@
     "animate.less": "*",
     "basic-js-cookie-banner": "*",
     "direct-share-buttons": "*",
-    "rapid-style": "*",
-    "wow": "^1.1.2"
-  },
-  "resolutions": {
-    "jquery": "1.9.1 - 2"
+    "wow": "^1.1.2",
+    "font-awesome": "fontawesome#^4.7.0"
   }
 }

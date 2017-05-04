@@ -8,12 +8,15 @@ var html_dir = ['./*.html', './*.php', './**/*.html', './**/*.php'],
     js_output_dir = './public/js',
     css_dir = './public/css',
     php_dir = ['./*.php', './**/*.php'],
-    img_src_dir = ['./layout/*.+(png|jpg|gif|jpeg)'],
-    img_out_dir = './layout';
+    img_src_dir = ['./*.+(png|jpg|gif|jpeg)', './**/*.+(png|jpg|gif|jpeg)'],
+    img_out_dir = './public/img',
+    fonts_dir = ['./public/bower_components/font-awesome/fonts/*'],
+    fonts_output_dir = './public/fonts';
 
 /*Gulp Requires*/
 var gulp = require('gulp'),
     less = require('gulp-less'),
+    LessPluginAutoPrefix = require('less-plugin-autoprefix'),
     LessPluginCleanCSS = require('less-plugin-clean-css'),
     watch = require('gulp-watch'),
     path = require('path'),
@@ -21,16 +24,17 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     jshint = require('gulp-jshint'),
     cat = require('gulp-concat'),
-    cleancss = new LessPluginCleanCSS({ advanced: true, keepSpecialComments: 0 }),
     imageop = require('gulp-image-optimization'),
-    livereload = require('gulp-livereload');
+    livereload = require('gulp-livereload'),
+    rename = require("gulp-rename"),
+    autoprefix = new LessPluginAutoPrefix({browsers: ["last 2 versions"]}),
+    cleancss = new LessPluginCleanCSS({ advanced: true, keepSpecialComments: 0 });
 
 /*Default Task*/
 gulp.task('default', ['less', 'js-build', 'images']);
 
 /*Run linters*/
 gulp.task('lint', ['bootlint', 'jshint']);
-
 
 /*Watch Task*/
 gulp.task('watch', function() {
@@ -56,8 +60,9 @@ gulp.task('less-main', function() {
     return gulp.src(less_dir)
         .pipe(less({
           paths: [ path.join(__dirname, 'less', 'includes') ],
-          plugins: [cleancss]
+          plugins: [cleancss, autoprefix]
         })).pipe(livereload())
+        .pipe(rename('style.min.css'))
         .pipe(gulp.dest(css_dir));
 });
 
@@ -88,10 +93,15 @@ gulp.task('bootlint', function() {
         .pipe(bootlint({disabledIds: ['E001', 'W001', 'W002', 'W003', 'W005']}))
         .pipe(livereload());
 });
-
 /*JS Lint*/
 gulp.task('jshint', function() {
   return gulp.src(js_dir)
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'));
+});
+
+/*Copy FontAwesome fonts to the public directory*/
+gulp.task('fonts', function() {
+  return gulp.src(fonts_dir)
+  .pipe(gulp.dest(fonts_output_dir));
 });
