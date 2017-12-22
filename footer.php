@@ -23,5 +23,6 @@
 		</footer>
 		<?php wp_footer(); ?>
 		<script src="<?php bloginfo('template_url'); ?>/public/js/scripts.min.js"></script>
+		<?php require_once('includes/structured-data.php'); ?>
 	</body>
 </html>
