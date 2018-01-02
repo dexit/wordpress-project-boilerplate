@@ -1,6 +1,6 @@
-	<footer class="container"> 
-		<hr>
-		<nav class="navbar navbar-expand-lg navbar-light p-0" role="navigation">
+	<footer class="mt-5"> 
+		
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
 
 			<div class="container">
 				<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#footer-menu-collapse" aria-controls="footer-menu-collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,8 +18,7 @@
 					?>
 				</div>
 			</nav>
-			<hr>
-			<p class="text-center"><small>&copy; <?php echo Date('Y') ?> &mdash; <?php echo bloginfo('name'); ?></small></p>
+			<p class="text-center pt-3 pb-3"><small>&copy; <?php echo Date('Y') ?> &mdash; <?php echo bloginfo('name'); ?></small></p>
 		</footer>
 		<?php wp_footer(); ?>
 		<script src="<?php bloginfo('template_url'); ?>/public/js/scripts.min.js"></script>
