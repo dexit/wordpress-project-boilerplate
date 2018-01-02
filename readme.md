@@ -5,8 +5,10 @@ A blank Bootstrap 4 theme to be used for WordPress-powered projects.
 * Bootstrap 4 Based
 * Gulp powered
 * Scss support
+* Bespoke frontpage design
 * Theme Options
 * Menu editor support
+* SEO Structured Data included
 
 ## Installation & Documentation
 You can find how to use this Wordpress Project boilerplate by [reading the wiki](https://github.com/rapidwebltd/wordpress-project-boilerplate/wiki/Installation-Guide).
