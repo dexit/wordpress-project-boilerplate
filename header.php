@@ -17,8 +17,11 @@
             $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
         ?>
         <img src="<?php echo $image[0]; ?>" alt="<?php echo bloginfo('name'); ?>" class="logo img-fluid pt-3 pb-3">
-        <hr>
-        <nav class="navbar navbar-expand-lg navbar-light p-0" role="navigation">
+
+       
+
+    </header>
+ <nav class="navbar navbar-expand-lg navbar-dark mt-3 mb-0 bg-dark text-white" role="navigation">
 
             <div class="container">
                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#header-menu-collapse" aria-controls="header-menu-collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,5 +39,3 @@
             ?>
             </div>
         </nav>
-        <hr>
-    </header>
