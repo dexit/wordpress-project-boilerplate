@@ -28,8 +28,8 @@
     "Yamm3": "yamm3#^1.1.0",
     "animate.less": "*",
     "basic-js-cookie-banner": "*",
-    "direct-share-buttons": "*",
     "wow": "^1.1.2",
-    "font-awesome": "fontawesome#^4.7.0"
+    "font-awesome": "fontawesome#^4.7.0",
+    "bootstrap": "3.3.7"
   }
 }
