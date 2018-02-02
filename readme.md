@@ -1,4 +1,4 @@
-# Wordpress Project Boilerplate
+# Wordpress Bootstrap 4 Project Boilerplate
 A blank Bootstrap 4 theme to be used for WordPress-powered projects.
 
 ## Features
