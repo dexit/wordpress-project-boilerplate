@@ -21,7 +21,6 @@
 			<p class="text-center pt-3 pb-3"><small>&copy; <?php echo Date('Y') ?> &mdash; <?php echo bloginfo('name'); ?></small></p>
 		</footer>
 		<?php wp_footer(); ?>
-		<script src="<?php bloginfo('template_url'); ?>/public/js/scripts.min.js"></script>
 		<?php require_once('includes/structured-data.php'); ?>
 	</body>
 </html>
