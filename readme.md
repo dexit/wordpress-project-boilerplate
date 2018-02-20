@@ -1,5 +1,8 @@
 # Wordpress Bootstrap 4 Project Boilerplate
+<sup>[Looking for the blank Bootstrap 3 theme?](https://github.com/rapidwebltd/wordpress-project-boilerplate/tree/v3)</sup>
+
 A blank Bootstrap 4 theme to be used for WordPress-powered projects.
+![Preview screenshot of the blank Bootstrap 4 theme](https://res.cloudinary.com/rapid-web/image/upload/c_crop,g_center,q_70,w_1002,x_10/v1519119800/screenshot.png)
 
 ## Features
 * Bootstrap 4 Based
